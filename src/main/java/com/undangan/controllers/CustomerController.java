@@ -30,7 +30,6 @@ public class CustomerController {
     private CustomerService customerService;
 
     @CrossOrigin(origins = "http://localhost:3000")
-    
     @GetMapping("/api/client/customer")
     public ResponseEntity<ResponseData<List<Customer>>> findAllClient() {
 
@@ -45,6 +44,7 @@ public class CustomerController {
                 .body(responseCustomer);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/client/customer/mypath") /*Komunikasi API dengan jenis POST*/
     public ResponseEntity<ResponseData<Customer>> findByPathClient (@RequestParam String path) /*Mengambil Request data dari Body dan melakukan Proses Validasi*/
     {
